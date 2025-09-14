@@ -1,4 +1,4 @@
-# ELK#1 – Real-time Log Ingestion & Processing with Multiple Pipelines
+# Real-time Log Ingestion & Processing with Multiple Pipelines
 
 **Litaaya**
 
