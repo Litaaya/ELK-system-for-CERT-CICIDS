@@ -1,0 +1,81 @@
+Header	            Thông tin Chi Tiết
+Dst Port	        Số cổng đích. Đây là cổng mà traffic được chuyển đến (ví dụ: 80, 443, 21,…).
+Protocol	        Giao thức truyền tải: thường là TCP, UDP, hoặc ICMP. Điều này cho biết loại giao thức của traffic.
+Timestamp	        Thời điểm ghi nhận (hoặc bắt đầu) của luồng dữ liệu, thường được lưu dưới dạng chuỗi định dạng thời gian.
+Flow Duration	    Thời gian tồn tại của luồng dữ liệu từ lúc bắt đầu đến kết thúc, thường tính bằng micro giây (µs) hoặc mili giây, tùy theo dataset.
+Tot Fwd Pkts	    Tổng số gói tin gửi đi theo hướng “forward” (từ nguồn đến đích).
+Tot Bwd Pkts	    Tổng số gói tin gửi theo hướng “backward” (từ đích về nguồn).
+TotLen Fwd Pkts	    Tổng số byte (độ dài tổng cộng) của các gói tin theo hướng forward.
+TotLen Bwd Pkts	    Tổng số byte của các gói tin theo hướng backward.
+Fwd Pkt Len Max	    Kích thước lớn nhất của một gói tin trong hướng forward.
+Fwd Pkt Len Min	    Kích thước nhỏ nhất của một gói tin theo hướng forward.
+Fwd Pkt Len Mean	Độ dài trung bình của các gói tin forward.
+Fwd Pkt Len Std	    Độ lệch chuẩn của độ dài gói tin forward, cho biết mức độ phân tán của kích thước các gói tin.
+Bwd Pkt Len Max	    Kích thước lớn nhất của các gói tin backward.
+Bwd Pkt Len Min	    Kích thước nhỏ nhất của các gói tin backward.
+Bwd Pkt Len Mean	Độ dài trung bình của các gói tin backward.
+Bwd Pkt Len Std	    Độ lệch chuẩn của kích thước các gói tin backward.
+Flow Byts/s	        Tốc độ truyền tải dữ liệu của luồng, tính bằng byte trên giây.
+Flow Pkts/s	        Tốc độ truyền tải của luồng, tính bằng số gói tin trên giây.
+Flow IAT Mean	    Thời gian trung bình giữa các gói tin trong luồng (Inter Arrival Time - IAT), đo lường khoảng cách thời gian trung bình giữa việc nhận các gói tin.
+Flow IAT Std	    Độ lệch chuẩn của IAT trong luồng, cho biết mức độ biến động giữa các khoảng thời gian giữa các gói tin.
+Flow IAT Max	    Khoảng thời gian dài nhất giữa các gói tin trong luồng.
+Flow IAT Min	    Khoảng thời gian ngắn nhất giữa các gói tin trong luồng.
+Fwd IAT Tot 	    Tổng thời gian giữa các gói tin theo hướng forward (cộng dồn các khoảng cách giữa các gói tin).
+Fwd IAT Mean	    Thời gian trung bình giữa các gói tin forward.
+Fwd IAT Std	        Độ lệch chuẩn của IAT cho hướng forward.
+Fwd IAT Max 	    Khoảng cách thời gian tối đa giữa các gói tin forward.
+Fwd IAT Min	        Khoảng cách thời gian tối thiểu giữa các gói tin forward.
+Bwd IAT Tot 	    Tổng thời gian giữa các gói tin backward.
+Bwd IAT Mean	    Thời gian trung bình giữa các gói tin backward.
+Bwd IAT Std 	    Độ lệch chuẩn của IAT cho các gói tin backward.
+Bwd IAT Max	        Khoảng cách thời gian tối đa giữa các gói tin backward.
+Bwd IAT Min 	    Khoảng cách thời gian tối thiểu giữa các gói tin backward.
+Fwd PSH Flags	    Số lượng cờ PSH (Push) được thiết lập trong các gói tin forward. Cờ này cho biết dữ liệu được đẩy nhanh qua kết nối TCP.
+Bwd PSH Flags	    Số lượng cờ PSH trong các gói tin backward.
+Fwd URG Flags	    Số lượng cờ URG (Urgent) trong các gói tin forward, biểu hiện thông tin khẩn cấp trong giao tiếp.
+Bwd URG Flags	    Số lượng cờ URG trong gói tin backward.
+Fwd Header Len	    Độ dài của các header trong các gói tin forward.
+Bwd Header Len	    Độ dài của header trong các gói tin backward.
+Fwd Pkts/s  	    Số gói tin gửi đi theo hướng forward mỗi giây (một cách tính riêng biệt so với Flow Pkts/s).
+Bwd Pkts/s	        Số gói tin gửi về theo hướng backward mỗi giây.
+Pkt Len Min 	    Kích thước nhỏ nhất của một gói tin trong toàn bộ luồng (không phân biệt hướng).
+Pkt Len Max	        Kích thước lớn nhất của gói tin trong toàn bộ luồng.
+Pkt Len Mean	    Kích thước trung bình của các gói tin trong luồng.
+Pkt Len Std	        Độ lệch chuẩn của kích thước gói tin, cho biết mức độ phân tán của kích thước gói tin trong toàn bộ luồng.
+Pkt Len Var	        Phương sai của kích thước gói tin. Đây là bình phương của độ lệch chuẩn, cho biết mức độ phân tán của các kích thước gói tin.
+FIN Flag Cnt	    Số lượng cờ FIN (finish) trong các gói tin TCP, thường dùng để kết thúc một kết nối.
+SYN Flag Cnt	    Số lượng cờ SYN (synchronize) trong các gói tin, dùng để bắt đầu một kết nối TCP.
+RST Flag Cnt	    Số lượng cờ RST (reset) được gửi trong giao tiếp TCP, thường dùng để hủy bỏ kết nối.
+PSH Flag Cnt	    Số lượng cờ PSH trong TCP, tương tự như Fwd PSH Flags nhưng tổng hợp theo cả hai hướng nếu cần.
+ACK Flag Cnt	    Số lượng cờ ACK (acknowledge) trong giao tiếp TCP, xác nhận việc nhận dữ liệu.
+URG Flag Cnt	    Số lượng cờ URG trong giao tiếp TCP.
+CWE Flag Count	    Số lượng cờ CWE (Congestion Window Reduced) hiển thị khi có sự giảm kích thước cửa sổ do tắc nghẽn.
+ECE Flag Cnt	    Số lượng cờ ECE (Explicit Congestion Notification Echo), liên quan đến thông báo tắc nghẽn trong mạng.
+Down/Up Ratio	    Tỷ lệ giữa lưu lượng dữ liệu nhận (down) và gửi (up), giúp đánh giá hướng dữ liệu chính của kết nối.
+Pkt Size Avg	    Kích thước trung bình của các gói tin.
+Fwd Seg Size Avg	Kích thước trung bình của các segment (phân đoạn) dữ liệu theo hướng forward.
+Bwd Seg Size Avg	Kích thước trung bình của các segment dữ liệu theo hướng backward.
+Fwd Byts/b Avg	    Trung bình số byte trên mỗi “bulk” (khối) gửi theo hướng forward. Bulk ở đây có thể hiểu là nhóm dữ liệu được gom lại.
+Fwd Pkts/b Avg	    Trung bình số gói tin trên mỗi bulk gửi theo hướng forward.
+Fwd Blk Rate Avg	Tốc độ truyền bulk dữ liệu theo hướng forward.
+Bwd Byts/b Avg	    Trung bình số byte trên mỗi bulk gửi theo hướng backward.
+Bwd Pkts/b Avg	    Trung bình số gói tin trên mỗi bulk theo hướng backward.
+Bwd Blk Rate Avg	Tốc độ truyền bulk theo hướng backward.
+Subflow Fwd Pkts	Số lượng gói tin của “subflow” (luồng phụ) theo hướng forward; có thể phân tách từ luồng tổng nếu có tính chất đặc trưng phân đoạn.
+Subflow Fwd Byts	Tổng số byte trong các gói tin của subflow forward.
+Subflow Bwd Pkts	Số gói tin của subflow theo hướng backward.
+Subflow Bwd Byts	Tổng số byte của subflow backward.
+Init Fwd Win Byts	Kích thước ban đầu của cửa sổ TCP (TCP window) khi bắt đầu truyền dữ liệu theo hướng forward.
+Init Bwd Win Byts	Kích thước ban đầu của TCP window theo hướng backward.
+Fwd Act Data Pkts	Số lượng gói tin chứa dữ liệu thực sự theo hướng forward (loại bỏ các gói tin chỉ mang thông tin điều khiển).
+Fwd Seg Size Min	Kích thước nhỏ nhất của các segment dữ liệu theo hướng forward.
+Active Mean	        Thời gian trung bình mà kết nối ở trạng thái “active” (có giao tiếp, truyền dữ liệu).
+Active Std	        Độ lệch chuẩn của thời gian active, cho biết tính ổn định của hoạt động trong kết nối.
+Active Max	        Thời gian active lớn nhất trong một kết nối.
+Active Min	        Thời gian active nhỏ nhất.
+Idle Mean	        Thời gian trung bình khi kết nối ở trạng thái “idle” (không có giao tiếp).
+Idle Std	        Độ lệch chuẩn của thời gian idle.
+Idle Max	        Thời gian idle lớn nhất.
+Idle Min	        Thời gian idle nhỏ nhất.
+Label	            Nhãn phân loại của luồng dữ liệu, thường dùng để xác định loại hành vi (ví dụ: benign, DDoS, PortScan, Bot, Brute Force, v.v.) hoặc tấn công cụ thể.

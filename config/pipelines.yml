@@ -1,0 +1,8 @@
+- pipeline.id: cicids
+  path.config: "/usr/share/logstash/pipeline/logstash_CICIDS.conf"
+
+- pipeline.id: cert_email
+  path.config: "/usr/share/logstash/pipeline/logstash_CERT_email.conf"
+
+- pipeline.id: cert_psychometric
+  path.config: "/usr/share/logstash/pipeline/logstash_CERT_psychometric.conf"

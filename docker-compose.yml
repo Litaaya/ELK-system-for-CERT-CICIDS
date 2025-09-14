@@ -1,0 +1,49 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.2 #Elastic Docker registry
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node # Chạy chế độ single node
+      - xpack.security.enabled=false # Tắt tính năng bảo mật x-pack
+    ports:
+      - "9200:9200"
+#      - "9300:9300" Này để xài liên lạc giữa các node thôi
+    mem_limit: 1g
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.6.2
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 # Liên kết
+      - NODE_OPTIONS=--max-old-space-size=1024 # Giới hạn bộ nhớ Node.js
+    depends_on:
+      - elasticsearch # Đảm bảo rằng Elasticsearch phải chạy trước rồi mới tới Kibana
+    networks:
+      - elk
+    mem_limit: 1g
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.6.2
+    container_name: logstash
+    ports:
+#      - "5044:5044"  Cổng để beat gửi, prj này không xài beats
+      - "9600:9600" # Monitoring và trạng thái của logstash -> Truy cập các thông tin giám sát, trạng thái, và hiệu năng của Logstash
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk
+    volumes:
+      - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ./pipeline/:/usr/share/logstash/pipeline
+      - ./datasets:/usr/share/logstash/datasets
+    mem_limit: 1g
+    environment:
+      - LS_JAVA_OPTS=-Xms256m -Xmx512m
+
+networks:
+  elk:
+    driver: bridge
