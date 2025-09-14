@@ -3,6 +3,7 @@
 **Litaaya**
 
 Đây là dự án sử dụng Docker để triển khai bộ ELK Stack (Elasticsearch, Logstash, Kibana) để thu thập, xử lý và phân tích log. Dự án này được thiết kế để xử lý nhiều loại dữ liệu log khác nhau qua các pipeline độc lập, bao gồm dữ liệu CICIDS 2018 và các dataset từ CERT Insider Threat.
+Note: dataset bên kaggle vì giới hạn của github
 
 ---
 
